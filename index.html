@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Tambahkan Font Awesome untuk ikon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSIM MA Refah Islami</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar"> <!-- Dipindahkan ke atas header -->
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Logo OSIM MA Refah Islami" class="nav-logo-img">
+            <span class="nav-name">OSIM MA Refah Islami</span>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <ul class="menu">
+            <li><a href="#">Beranda</a></li>
+            <li class="dropdown">
+                <a href="#">Profil ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="file:///D:/Div.%20Mulmed/WEB%20VSC/Visi%20Misi/index.html">Filosofi Logo Osim</a></li>
+                    <li><a href="file:///D:/Div.%20Mulmed/WEB%20VSC/Struktur/index.html">Struktur Organisasi</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Program ▾</a>
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Dokumentasi</a></li>
+                </ul>
+            </li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <div class="nav-social-links"> <!-- Ditambahkan di navbar -->
+            <a href="https://www.instagram.com/osim.marefahislami" target="_blank" class="social-link instagram">
+                <i class="fab fa-instagram"></i> <!-- Ikon Instagram dari Font Awesome -->
+            </a>
+            <label for="menu-toggle" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+</header>
+
+<main>
+    <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>
+           Organisasi Siswa Intra Madrasah (OSIM) merupakan organisasi resmi peserta didik yang menjadi wadah pembinaan, pengembangan potensi, serta penyaluran aspirasi siswa di lingkungan madrasah. OSIM hadir sebagai bagian penting dari sistem pendidikan madrasah yang berperan aktif dalam membentuk karakter siswa yang berakhlakul karimah, berwawasan luas, dan memiliki jiwa kepemimpinan.
+
+           Sebagai organisasi yang bernaung di bawah bimbingan kepala madrasah dan dewan guru, OSIM berfungsi sebagai penghubung antara siswa dan pihak madrasah. Melalui OSIM, siswa dilatih untuk menyampaikan gagasan, berpartisipasi dalam pengambilan keputusan, serta bertanggung jawab terhadap setiap amanah yang diemban. Hal ini bertujuan untuk menumbuhkan sikap disiplin, rasa tanggung jawab, serta kemampuan berorganisasi yang baik.
+
+           OSIM tidak hanya berfokus pada kegiatan internal, tetapi juga berperan aktif dalam menciptakan suasana madrasah yang kondusif, religius, dan inspiratif. Berbagai program kerja disusun secara terencana dan berkelanjutan, meliputi bidang keagamaan, kepemimpinan, sosial, seni, olahraga, serta pengembangan minat dan bakat siswa. Setiap kegiatan dirancang untuk mendorong siswa agar mampu berkembang secara akademik maupun non-akademik.
+
+           Dalam pelaksanaannya, OSIM menanamkan nilai-nilai keislaman sebagai landasan utama dalam setiap aktivitas. Nilai kejujuran, amanah, kerja sama, dan kepedulian sosial menjadi prinsip yang selalu dijunjung tinggi. Dengan berpegang pada nilai-nilai tersebut, OSIM berupaya membentuk generasi madrasah yang tidak hanya cerdas secara intelektual, tetapi juga matang secara spiritual dan emosional.
+
+           Melalui semangat kebersamaan dan dedikasi seluruh pengurus serta anggota, OSIM berkomitmen untuk terus berkontribusi dalam memajukan madrasah. OSIM menjadi ruang belajar yang mendidik, membina, dan mempersiapkan siswa agar mampu menjadi pribadi yang mandiri, berdaya saing, serta siap menghadapi tantangan di masa depan, baik di lingkungan pendidikan maupun di tengah masyarakat.
+        </p>
+    </section>
+
+
+
+    <section id="kontak">
+        <h2>Kontak</h2>
+        <p>Email : osim.marefah@email.com</p>
+        <p>Instagram : @osim.marefahislami</p>
+    </section>
+</main>
+
+
+
+<footer>
+    <div class="social-links"> <!-- Dipindahkan ke atas -->
+        <a href="https://www.instagram.com/osim.marefahislami" target="_blank" class="social-link instagram">
+            <i class="fab fa-instagram"></i> <!-- Ikon Instagram dari Font Awesome -->
+        </a>
+    </div>
+    <p>&copy; 2026 OSIM MA Refah Islami • All Rights Reserved</p>
+</footer>
+
+<script>
+    AOS.init(); // Initialize AOS animations
+
+    // Script untuk menutup menu hamburger saat link diklik pada mobile dan toggle dropdown
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.querySelectorAll('.menu a');
+        const dropdowns = document.querySelectorAll('.dropdown > a');
+
+        // Fungsi untuk menutup menu hamburger
+        function closeMenu() {
+            menuToggle.checked = false;
+        }
+
+        // Tutup menu saat link menu diklik (kecuali dropdown toggle)
+        const topLevelLinks = document.querySelectorAll('.menu > li > a:not(.dropdown > a)');
+        const submenuLinks = document.querySelectorAll('.dropdown-menu a');
+
+        topLevelLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        submenuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Toggle dropdown pada semua device
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                e.preventDefault(); // Mencegah navigasi jika ada href
+                e.stopPropagation(); // Mencegah event bubbling
+                const dropdownLi = this.parentElement;
+                dropdownLi.classList.toggle('open');
+                // Tutup dropdown lain terlebih dahulu
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    if (d !== dropdownLi) {
+                        d.classList.remove('open');
+                    }
+                });
+            });
+        });
+
+        // Tutup dropdown saat klik di luar
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    d.classList.remove('open');
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

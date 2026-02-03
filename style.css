@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #0f1115;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+
+/* HERO HEADER */
+.hero {
+    background-image: url('background1.png');
+    background-size: cover; /* Membuat gambar memenuhi layar */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Mencegah pengulangan */
+    text-align: center;
+    padding: 250px 20px 220px;
+    display: flex; /* Mengubah menjadi flexbox untuk menempatkan logo dan teks */
+    align-items: center; /* Menyelaraskan logo dan teks secara vertikal */
+    justify-content: flex-start; /* Memusatkan konten ke atas */
+    flex-direction: column; /* Logo di atas, teks di bawah pada mobile */
+}
+
+.hero .logo {
+    max-height: 80px; /* Ukuran logo maksimal */
+    margin-bottom: 20px; /* Spasi antara logo dan judul */
+    filter: brightness(1.1); /* Sedikit penyesuaian kecerahan untuk tema gelap */
+}
+
+.hero h1 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #ffffff; /* Warna putih penuh untuk kontras */
+    -webkit-text-stroke: 1px rgba(0,0,0,0.0); /* Outline hitam untuk membuat teks tajam */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.7); /* Bayangan ganda untuk keterbacaan maksimal */
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #ffffff; /* Warna putih penuh untuk tagline */
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.8); /* Outline tipis untuk tagline */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7); /* Bayangan ganda untuk tagline */
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo dan nama di kiri, menu di kanan */
+    align-items: center;
+    max-width: 1200px; /* Lebar maksimal navbar */
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spasi antara logo dan nama */
+}
+
+.nav-logo-img {
+    max-height: 40px; /* Ukuran logo di navbar lebih kecil */
+    filter: brightness(1.2);
+}
+
+.nav-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #eaeaea;
+}
+
+.menu-toggle {
+    display: none; /* Hidden checkbox */
+}
+
+.hamburger {
+    display: none; /* Hide hamburger since menu is always visible */
+}
+
+.menu {
+    list-style: none;
+    display: flex; /* Always visible */
+    position: absolute;
+    top: 100%; /* Below navbar */
+    right: 0; /* Di pinggir kanan */
+    left: auto; /* Tidak full width */
+    width: 250px; /* Lebar tetap, tidak memenuhi layar */
+    background-color: #111;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    z-index: 99;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #eaeaea;
+    font-weight: 500;
+    padding: 8px 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #caa24d;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+    list-style: none;
+    position: static; /* Change to static for mobile-like dropdown */
+    background-color: #1a1a1a;
+    min-width: 200px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    margin-top: 10px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 15px;
+    color: #ddd;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #2a2a2a;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* NAV SOCIAL LINKS */
+.nav-social-links {
+    display: flex; /* Flex untuk menempatkan Instagram dan hamburger berdampingan */
+    align-items: center;
+    gap: 10px; /* Spasi antara Instagram dan hamburger */
+}
+
+.nav-social-links .social-link.instagram {
+    color: #ffffff; /* Warna putih untuk hitam putih */
+    font-size: 1.2rem; /* Ukuran ikon di navbar */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-social-links .social-link.instagram:hover {
+    color: #cccccc; /* Warna hover abu-abu terang */
+    transform: scale(1.1);
+}
+
+/* TOGGLE MENU */
+.menu-toggle:checked ~ .menu {
+    display: flex; /* Show menu when checked */
+}
+
+/* MAIN CONTENT */
+main {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: linear-gradient(145deg, #16181d 0%, #1e2025 100%);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+}
+
+section h2 {
+    color: #caa24d;
+    margin-bottom: 15px;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 25px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-bottom: 10px; /* Spasi dari teks copyright */
+}
+
+.social-link.instagram {
+    display: inline-block;
+    color: #ffffff; /* Warna putih untuk hitam putih */
+    font-size: 1.5rem; /* Ukuran ikon */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-link.instagram:hover {
+    color: #cccccc; /* Warna hover abu-abu terang untuk efek hitam putih */
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: row; /* Logo di kiri, hamburger di kanan pada mobile */
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .menu {
+        display: none; /* Hide menu by default on mobile */
+        position: absolute; /* Overlay on mobile */
+        top: 100%; /* Below navbar */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center */
+        width: 90%; /* Smaller width */
+        max-width: 300px; /* Max width */
+        background-color: #111; /* Background */
+        box-shadow: 0 8px 30px rgba(0,0,0,0.6); /* Shadow */
+        text-align: center;
+        padding: 15px; /* Smaller padding */
+        gap: 15px; /* Smaller gap */
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide dropdown on mobile */
+        position: static; /* Stack below parent */
+        margin-top: 0; /* No margin */
+        padding-left: 20px; /* Indent */
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    /* Removed hover for mobile since we use JavaScript toggle */
+
+    .nav-social-links {
+        margin-left: 0; /* Reset margin pada mobile */
+        margin-top: 0; /* Reset margin atas pada mobile */
+    }
+
+    .hero {
+        background-position: center top; /* Sesuaikan posisi background untuk mobile agar lebih fokus pada bagian atas */
+        background-size: contain; /* Ubah ke contain untuk mencegah cropping pada mobile */
+        background-repeat: no-repeat; /* Pastikan tidak repeat */
+        padding: 150px 20px 100px; /* Kurangi padding untuk layar mobile */
+        flex-direction: column; /* Pastikan logo di atas pada mobile */
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero .logo {
+        max-height: 60px; /* Ukuran logo lebih kecil pada mobile */
+        margin-bottom: 15px;
+    }
+
+    .nav-name {
+        font-size: 1rem; /* Ukuran nama lebih kecil pada mobile */
+    }
+
+    .nav-logo-img {
+        max-height: 30px; /* Logo navbar lebih kecil pada mobile */
+    }
+
+    .social-link.instagram {
+        font-size: 1.2rem; /* Ikon lebih kecil pada mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    .menu {
+        display: flex; /* Always show menu on desktop */
+        position: static; /* Position in navbar */
+        flex-direction: row; /* Horizontal layout */
+        gap: 30px; /* Space between menu items */
+        background-color: transparent; /* No background */
+        box-shadow: none; /* No shadow */
+        padding: 0; /* No padding */
+        width: auto; /* Auto width */
+        flex: 1; /* Take available space to center */
+        justify-content: center; /* Center menu items */
+    }
+
+    .dropdown-menu {
+        position: absolute; /* Position dropdown below menu item */
+        top: 100%; /* Below the menu item */
+        left: 0; /* Align to left of menu item */
+        z-index: 100; /* Ensure it appears above other content */
+        min-width: 150px; /* Smaller width */
+        padding: 10px; /* Smaller padding */
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+
+
