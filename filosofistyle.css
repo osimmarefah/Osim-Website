@@ -13,10 +13,7 @@ body {
 
 /* HERO HEADER */
 .hero {
-    background-image: url('background1.png');
-    background-size: cover; /* Membuat gambar memenuhi layar */
-    background-position: center; /* Memusatkan gambar */
-    background-repeat: no-repeat; /* Mencegah pengulangan */
+    background-image: url('filosofi.png');
     text-align: center;
     padding: 250px 20px 220px;
     display: flex; /* Mengubah menjadi flexbox untuk menempatkan logo dan teks */
@@ -44,12 +41,6 @@ body {
     color: #ffffff; /* Warna putih penuh untuk tagline */
     -webkit-text-stroke: 0.5px rgba(0,0,0,0.8); /* Outline tipis untuk tagline */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7); /* Bayangan ganda untuk tagline */
-}
-
-.hero-logo {
-    max-height: 150px; /* Ukuran logo maksimal di hero */
-    margin-bottom: 20px; /* Spasi antara logo dan teks */
-    filter: brightness(1.1); /* Sedikit penyesuaian kecerahan untuk tema gelap */
 }
 
 /* NAVBAR */
@@ -266,13 +257,9 @@ footer {
 
     .dropdown-menu {
         display: none; /* Hide dropdown on mobile */
-        position: static; /* Stack below the link */
+        position: static; /* Stack below parent */
         margin-top: 0; /* No margin */
         padding-left: 20px; /* Indent */
-        background-color: #1a1a1a; /* Ensure background for visibility */
-        border-radius: 10px; /* Match desktop */
-        box-shadow: 0 15px 40px rgba(0,0,0,0.7); /* Match desktop */
-        transition: none; /* No transition for instant show */
     }
 
     .dropdown.open .dropdown-menu {
@@ -344,8 +331,7 @@ footer {
     }
 
     .dropdown:hover .dropdown-menu,
-    .dropdown-menu:hover,
-    .dropdown.open .dropdown-menu {
+    .dropdown-menu:hover {
         opacity: 1;
         visibility: visible;
     }
