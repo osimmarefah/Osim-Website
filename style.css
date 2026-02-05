@@ -21,8 +21,9 @@ body {
     padding: 250px 20px 220px;
     display: flex; /* Mengubah menjadi flexbox untuk menempatkan logo dan teks */
     align-items: center; /* Menyelaraskan logo dan teks secara vertikal */
-    justify-content: flex-start; /* Memusatkan konten ke atas */
-    flex-direction: column; /* Logo di atas, teks di bawah pada mobile */
+    justify-content: center; /* Memusatkan konten */
+    flex-direction: row; /* Logo di samping, teks di samping */
+    gap: 20px; /* Spasi antara logo dan teks */
 }
 
 .hero .logo {
