@@ -109,7 +109,7 @@ body {
     gap: 20px;
     padding: 20px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    z-index: 99;
+    z-index: 101;
 }
 
 .menu li {
@@ -132,9 +132,10 @@ body {
 .dropdown-menu {
     list-style: none;
     position: static; /* Change to static for mobile-like dropdown */
-    background-color: #1a1a1a;
+    background-color: #111;
     min-width: 200px;
     border-radius: 10px;
+    border: 1px solid #555;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -174,11 +175,6 @@ body {
 .nav-social-links .social-link.instagram:hover {
     color: #cccccc; /* Warna hover abu-abu terang */
     transform: scale(1.1);
-}
-
-/* TOGGLE MENU */
-.menu-toggle:checked ~ .menu {
-    display: flex; /* Show menu when checked */
 }
 
 /* MAIN CONTENT */
@@ -270,7 +266,7 @@ footer {
         position: static; /* Stack below the link */
         margin-top: 0; /* No margin */
         padding-left: 20px; /* Indent */
-        background-color: #1a1a1a; /* Ensure background for visibility */
+        background-color: #111; /* Same as header */
         border-radius: 10px; /* Match desktop */
         box-shadow: 0 15px 40px rgba(0,0,0,0.7); /* Match desktop */
         transition: none; /* No transition for instant show */
@@ -280,6 +276,10 @@ footer {
         display: block;
         opacity: 1;
         visibility: visible;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        display: flex;
     }
 
     /* Removed hover for mobile since we use JavaScript toggle */

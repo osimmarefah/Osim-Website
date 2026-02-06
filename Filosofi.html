@@ -24,7 +24,7 @@
             <li class="dropdown">
                 <a href="#">Profil ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="index.html#tentang">Tentang Kami</a></li>
                     <li><a href="Filosofi.html">Filosofi Logo OSIM</a></li>
                     <li><a href="Struktur.html">Struktur Organisasi</a></li>
                 </ul>
@@ -76,8 +76,7 @@
     // Script untuk menutup menu hamburger saat link diklik pada mobile dan toggle dropdown
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.getElementById('menu-toggle');
-        const menuLinks = document.querySelectorAll('.menu a');
-        const dropdowns = document.querySelectorAll('.dropdown > a');
+        const menu = document.querySelector('.menu');
 
         // Fungsi untuk menutup menu hamburger
         function closeMenu() {
@@ -86,22 +85,16 @@
 
         // Tutup menu saat link menu diklik (kecuali dropdown toggle)
         const topLevelLinks = document.querySelectorAll('.menu > li > a:not(.dropdown > a)');
-        const submenuLinks = document.querySelectorAll('.dropdown-menu a');
-
         topLevelLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
 
-        submenuLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Toggle dropdown pada semua device
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', function(e) {
-                e.preventDefault(); // Mencegah navigasi jika ada href
-                e.stopPropagation(); // Mencegah event bubbling
-                const dropdownLi = this.parentElement;
+        // Event delegation for dropdown toggle and submenu click on the menu
+        menu.addEventListener('click', function(e) {
+            if (e.target.closest('.dropdown > a')) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdownLi = e.target.closest('.dropdown');
                 dropdownLi.classList.toggle('open');
                 // Tutup dropdown lain terlebih dahulu
                 document.querySelectorAll('.dropdown').forEach(d => {
@@ -109,10 +102,18 @@
                         d.classList.remove('open');
                     }
                 });
-            });
+            } else if (e.target.closest('.dropdown-menu a')) {
+                setTimeout(() => {
+                    closeMenu();
+                    // Close all dropdowns
+                    document.querySelectorAll('.dropdown').forEach(d => {
+                        d.classList.remove('open');
+                    });
+                }, 100);
+            }
         });
 
-        // Tutup dropdown saat klik di luar
+        // Close dropdowns when clicking outside
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.dropdown')) {
                 document.querySelectorAll('.dropdown').forEach(d => {
