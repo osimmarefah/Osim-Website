@@ -278,6 +278,8 @@ footer {
 
     .dropdown.open .dropdown-menu {
         display: block;
+        opacity: 1;
+        visibility: visible;
     }
 
     /* Removed hover for mobile since we use JavaScript toggle */
